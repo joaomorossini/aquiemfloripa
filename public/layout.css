@@ -47,13 +47,13 @@ table {
 /* CSS Reset */
 
 .topmenu {
-    background: black;
     height: 50px;
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#111));    
 }
 
 #title {
-    font-size: 80px;
-    font-family: "gill sans";
+    font-size: 60px;
+    font-family: "verdana";
     text-align: center;
     color: #78AD07;
     border-radius: 5px;
@@ -62,8 +62,8 @@ table {
 }
 
 #main {
-    margin-right: 10%;
-    margin-left: 10%;
+    margin-right: 11%;
+    margin-left: 11%;
     padding: 5px;
 }
 
@@ -74,7 +74,6 @@ table {
 #content {
     height: 80%;    
     margin: 10px;
-    border: 3px dotted #CCC;
     border-radius: 10px;
 }
 
@@ -84,11 +83,27 @@ table {
     float: left;
 }
 
+.msg{
+    font-family: 'verdana';
+    font-size: 16;
+    height: 90px;
+    width: 100%;
+    background: #F4F3EB;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    padding: 10px;
+    float: center;
+    border-radius: 20px;
+}
+
 #sidebar {
     height: 100%;
     width: 20%;
     float: right;
     background: #E0E0E0;
+    border-radius: 10px;
 }
 
 #input {
@@ -96,6 +111,10 @@ table {
     height: 80px;
     text-align: center;
     border-radius: 10px;
+    font-family: 'verdana';
+    font-style: oblique;
+    font-size: 30;
+    text-align: left;
 }
 
 #submit {
@@ -103,14 +122,18 @@ table {
     background: #78AD07;
     border-radius: 10px;
     color: white;
-    font-size: 40px;
-    font-family: "handwriting - dakota";
+    font-size: 25px;
+    font-family: "verdana";
 }
 
 h2 {
     color: #666;
-    font-family: "gill sans";
+    font-family: "verdana";
     font-size: 40;
     text-align: center;
 }
 
+.bottommenu {
+    height: 50px;
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#111));
+}
