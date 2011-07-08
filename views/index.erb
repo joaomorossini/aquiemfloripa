@@ -1,58 +1,49 @@
+<!DOCTYPE HTML>
+
 <html>
-  <title> Floripa tem... </title>
+  <title> Aqui em... </title>
+
   <head>
     <link href='layout.css' rel='stylesheet' type='text/css'i>
-
   </head>
 
   <body>
-    <div class='topmenu'>
-    </div>
-    <div id='title'>
-    Aqui em Floripa
-    </div>
-    <div id='main'>
-      <div id='mainform'>
-	<form action='/' method='post'>
-	  <input id='input' name='input' type='text'>
-	  </input>
-	  <input id='submit' name='submit' type='submit' value='Enviar'>
-	  </input>
-	</form>
+    <div class="topmenu">
+      <div class="menu">
+	<a href="login.erb"> login </a>
       </div>
-      <div id='content'>
-	<div id='posts'>
-	  <!-- Mensagens de usuários -->
-	  <div class='msg'>
-	    Em Floripa tem...
-	  </div>
-	  <div class='msg'>
-	    Em Floripa tem...
-	  </div>
-	  <div class='msg'>
-	    Em Floripa tem...
-	  </div>
-	  <div class='msg'>
-	    Em Floripa tem...
-	  </div>
+      <div class="menu">
+	<a href="sign-in.erb"> sign-in </a>
+      </div>
+      <div class="menu">
+	<a href="help.erb"> help </a>
+      </div>
+    </div> <br>
+    <div class="main">
+      <div id="form">
+	<form method="post" action="index.erb">
+	  <h1 id="title"> Aqui tem... </h1>
+	  <input id="input" type="text" name="input"/>
+	  <input class="submit" type="submit" name="submit">
+	</form> <br>
+      </div>
+      <div class="content">
+	<div id="posts">
+	  <div class="recent"> <p> Em Floripa tem... </p> </div>
+	  <div class="recent"> <p> Em Floripa tem... </p> </div>
+	  <div class="recent"> <p> Em Floripa tem... </p> </div>
+	  <div class="recent"> <p> Em Floripa tem... </p> </div>
+	  <div class="recent"> <p> Em Floripa tem... </p> </div>
+	  <div class="recent"> <p> Em Floripa tem... </p> </div>	
+	  <div class="nav"> Anteriores | Próximos </div>
 	</div>
-	<div id='sidebar'>
-	  <h2> Sidebar </h2>
-	  <!-- Links e Trendy topics -->
+	<div class="sidebar">
+	  <h1> Sidebar </h1>
 	</div>
       </div>
     </div>
-    <div class='bottommenu'>
+    <div class="bottommenu">
     </div>
-    
-    <script type="text/javascript">
-      (function() {
-	var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
-	uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/z4La4bU65qA61aQQnvlZRA.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
-      })();
-    </script>
-
   </body>
 
 

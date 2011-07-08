@@ -46,94 +46,101 @@ table {
 
 /* CSS Reset */
 
+body {
+    font-family: lucida grande;
+}
+
 .topmenu {
     height: 50px;
-background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#111));    
+    background: black;
+}
+
+.menu {
+    color: #FFFFFF;
+    padding: 15px;
+    float: right;
+    font-size: 16px;
+}
+
+.main {
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    border: 2px dotted black;
+    min-height: 720px;
 }
 
 #title {
-    font-size: 60px;
-    font-family: "verdana";
+    text-align: left;
+    padding-left: 140px;
+    font-size: 24px;
+}
+
+#form {
     text-align: center;
-    color: #78AD07;
+    width: 100%;
+    padding: 25px;
+}
+
+#input {
+    width: 800px;
+    height: 70px;
     border-radius: 5px;
-    text-shadow: 5px 3px 3px #EEE;
-    
+    font-size: 18px;
+    text-align: left;
 }
 
-#main {
-    margin-right: 11%;
-    margin-left: 11%;
-    padding: 5px;
-}
-
-#mainform {
-    text-align: center;
-}
-
-#content {
-    height: 80%;    
-    margin: 10px;
-    border-radius: 10px;
+.submit {
 }
 
 #posts {
     height: 100%;
-    width: 75%;
+    width: 70%;
     float: left;
 }
 
-.msg{
-    font-family: 'verdana';
-    font-size: 16;
-    height: 90px;
-    width: 100%;
-    background: #F4F3EB;
-    position: relative;
+.recent{
+    width: 98%;
+    margin-left: 1%;
+    height: 76px;
+    margin-bottom: 5px;
+    background: #CCC;
+    border-radius: 5px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 10px;
+}
+
+p {
     padding: 10px;
-    float: center;
-    border-radius: 20px;
 }
 
-#sidebar {
-    height: 100%;
-    width: 20%;
+.nav {
+    text-align: right;
+    padding: 15px;
+}
+
+.sidebar {
+    width: 29%;
     float: right;
-    background: #E0E0E0;
+    margin-right: 0.8%;
+    background: #E4EDF7;
     border-radius: 10px;
-}
+    min-height: 520px;
 
-#input {
-    width: 845px;
-    height: 80px;
-    text-align: center;
-    border-radius: 10px;
-    font-family: 'verdana';
-    font-style: oblique;
-    font-size: 30;
-    text-align: left;
-}
-
-#submit {
-    display: inline;
-    background: #78AD07;
-    border-radius: 10px;
-    color: white;
-    font-size: 25px;
-    font-family: "verdana";
-}
-
-h2 {
-    color: #666;
-    font-family: "verdana";
-    font-size: 40;
-    text-align: center;
 }
 
 .bottommenu {
-    height: 50px;
-background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#111));
+    height: 80px;
+    background: #E4EDF7;
+    margin-top: 10px;
+}
+
+h1 {
+    padding: 10px;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+
 }
