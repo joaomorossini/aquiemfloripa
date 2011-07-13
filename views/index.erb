@@ -8,15 +8,17 @@
   </head>
 
   <body>
-    <div class="topmenu">
-      <div class="menu">
+    <div class="topbar">
+      <div id="logoandsearch">
+	LOGO
+	<input id="search" type="text" name="search">
+	</input>
+      </div>
+      <div class="topmenu">
 	<a href="login.erb"> login </a>
       </div>
-      <div class="menu">
-	<a href="sign-in.erb"> sign-in </a>
-      </div>
-      <div class="menu">
-	<a href="help.erb"> help </a>
+      <div class="topmenu">
+	<a href="about.erb"> about </a>
       </div>
     </div> <br>
     <div class="main">
@@ -26,6 +28,13 @@
 	  <input id="input" type="text" name="input"/>
 	  <input class="submit" type="submit" name="submit">
 	</form> <br>
+      </div>
+      <div id="social">
+	<form>
+	  <input type="checkbox"> Facebook </input>
+	  <input type="checkbox"> Twiter </input>
+	  <input type="checkbox"> Google Plus </input>
+	</form>
       </div>
       <div class="content">
 	<div id="posts">
@@ -38,7 +47,12 @@
 	  <div class="nav"> Anteriores | Próximos </div>
 	</div>
 	<div class="sidebar">
-	  <h1> Sidebar </h1>
+	  <div id="tagcloud">
+	    <h1> Tag Cloud </h1>
+	  </div> <hr/>
+	  <div id="patrocinio">
+	    <h1> Link Patrocinado </h1>
+	  </div>
 	</div>
       </div>
     </div>

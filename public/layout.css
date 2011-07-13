@@ -50,12 +50,25 @@ body {
     font-family: lucida grande;
 }
 
-.topmenu {
+.topbar {
     height: 50px;
+    width: 100%;
     background: black;
+    display: inline-block;
 }
 
-.menu {
+#logoandsearch {
+    display: inline;
+    color: white;
+    line-height: 50px;
+    margin-left: 40%;
+}
+
+#search{
+    width: 220px;
+}
+
+.topmenu {
     color: #FFFFFF;
     padding: 15px;
     float: right;
@@ -65,7 +78,7 @@ body {
 .main {
     margin-right: auto;
     margin-left: auto;
-    width: 90%;
+    width: 981px;
     border: 2px dotted black;
     min-height: 720px;
 }
@@ -80,6 +93,9 @@ body {
     text-align: center;
     width: 100%;
     padding: 25px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    height: 120px;;
 }
 
 #input {
@@ -91,6 +107,12 @@ body {
 }
 
 .submit {
+}
+
+#social{    
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #posts {
@@ -123,15 +145,24 @@ p {
     width: 29%;
     float: right;
     margin-right: 0.8%;
-    background: #E4EDF7;
-    border-radius: 10px;
-    min-height: 520px;
+    height: 100%;
+}
 
+#tagcloud {
+    height: 255px;
+    background: grey;
+    border-radius: 5px;
+}
+
+#patrocinio {
+    height: 255px;
+    background: grey;
+    border-radius: 5px;
 }
 
 .bottommenu {
     height: 80px;
-    background: #E4EDF7;
+    background: black;
     margin-top: 10px;
 }
 
