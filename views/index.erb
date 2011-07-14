@@ -8,35 +8,43 @@
   </head>
 
   <body>
-    <div class="topbar">
-      <div id="logoandsearch">
+    <div class="bar"> 
+      <div class="topbar">
 	LOGO
 	<input id="search" type="text" name="search">
 	</input>
+	<a href="login.erb">  login  </a>
+	<a href="about.erb">  about  </a>
       </div>
-      <div class="topmenu">
-	<a href="login.erb"> login </a>
-      </div>
-      <div class="topmenu">
-	<a href="about.erb"> about </a>
-      </div>
-    </div> <br>
+    </div>
+    
     <div class="main">
-      <div id="form">
-	<form method="post" action="index.erb">
-	  <h1 id="title"> Aqui tem... </h1>
-	  <input id="input" type="text" name="input"/>
-	  <input class="submit" type="submit" name="submit">
-	</form> <br>
+      <div class="sidebar">
+	<div id="userinfo">
+	  <h1> João Guilherme </h1>
+	</div>
+	<div id="tagcloud">
+	  <h1> Tag Cloud </h1>
+	</div>
+	<div id="patrocinio">
+	  <h1> Link Patrocinado </h1>
+	</div>
       </div>
-      <div id="social">
-	<form>
-	  <input type="checkbox"> Facebook </input>
-	  <input type="checkbox"> Twiter </input>
-	  <input type="checkbox"> Google Plus </input>
-	</form>
-      </div>
-      <div class="content">
+      <div id="content">
+	<div id="mainform">
+	  <form method="post" action="index.erb">
+	      <h1 id="title"> Aqui em FLORIPA tem... </h1>
+	      <input id="input" type="text" name="input"/>
+	      <input class="submit" type="submit" name="submit" value="Enviar">
+	  </form>
+	  <div id="social">
+	    <form>
+	      <input type="checkbox"> Facebook </input>
+	      <input type="checkbox"> Twitter </input>
+	      <input type="checkbox"> Google Plus </input>
+	    </form>
+	  </div>
+	</div>
 	<div id="posts">
 	  <div class="recent"> <p> Em Floripa tem... </p> </div>
 	  <div class="recent"> <p> Em Floripa tem... </p> </div>
@@ -46,19 +54,7 @@
 	  <div class="recent"> <p> Em Floripa tem... </p> </div>	
 	  <div class="nav"> Anteriores | Próximos </div>
 	</div>
-	<div class="sidebar">
-	  <div id="tagcloud">
-	    <h1> Tag Cloud </h1>
-	  </div> <hr/>
-	  <div id="patrocinio">
-	    <h1> Link Patrocinado </h1>
-	  </div>
-	</div>
-      </div>
-    </div>
-    <div class="bottommenu">
+      <div>
     </div>
   </body>
-
-
 </html>
