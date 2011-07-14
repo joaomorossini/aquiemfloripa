@@ -147,11 +147,39 @@ p {
     height: 100%;
 }
 
-#userinfo{
+#userinfo {
     height: 250px;
     background: grey;
     border-radius: 5px;
     margin-bottom: 10px;
+    padding: 8px;
+    font-size: 0.8em;
+}
+
+#userinfo h1 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#userinfo p {
+    padding: 0;
+    margin: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: inline-block;
+}
+
+.bold {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    padding-left: 5px;
+}
+
+#tags {
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
 }
 
 #tagcloud {
@@ -165,6 +193,18 @@ p {
     height: 200px;
     background: grey;
     border-radius: 5px;
+}
+
+#patrocinio p {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 2em;
+}
+
+#patrocinio img {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .bottommenu {
