@@ -1,3 +1,5 @@
+require 'bundler'
+Bundler.setup
 require 'active_record'
 require 'yaml'
 
@@ -11,4 +13,3 @@ end
 task :environment do
   ActiveRecord::Base.establish_connection(YAML::load(File.open('database.yml')))
 end
-

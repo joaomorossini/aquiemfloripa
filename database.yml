@@ -1,4 +1,4 @@
-adapter: mysql
+adapter: mysql2
 host: localhost
 database: aquiem
 username: aquiem
@@ -6,4 +6,3 @@ password: Angra098
 encoding: utf8
 pool: 8
 timeout: 5000
-

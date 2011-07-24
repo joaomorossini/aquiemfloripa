@@ -1,67 +1,64 @@
 <!DOCTYPE HTML>
 
 <html>
-  <title> Aqui em... </title>
-
   <head>
-    <link href='layout.css' rel='stylesheet' type='text/css'i>
+    <link href='layout.css' rel='stylesheet' type='text/css'>
+    <title> Aqui em... </title>
   </head>
-
   <body>
     <div class="bar"> 
       <div class="topbar">
 	LOGO
-	<input id="search" type="text" name="search">
-	</input>
+	<input id="search" type="text" name="search" />
 	<a href="login.erb">  login  </a>
 	<a href="about.erb">  about  </a>
       </div>
     </div>
     
-    <div class="main">
+    <div class="main clearfix">
       <div class="sidebar">
-	<div id="userinfo">
-	  <div id="user">
-	    <h1> João Guilherme S. Morossini </h1>
-	    <img src="/pic1.jpeg" height="45%" width="30%" />
-	</div>
-	<p class="bold"> Número de posts: </p> 52 <br />
-	<p class="bold"> Seguidores: </p> 123 <br />
-	  <p class="bold"> Principais tags: </p>
+	<div id="user">
+	  <h1> João Guilherme S. Morossini </h1>
+	  <img src="/" alt="jongui" /> 
+	  <p>
+	    <b>Número de posts:</b> 52
+	  </p>
+	  <p> 
+	    <b>Seguidores:</b>123
+	  </p>
+	  <b> Principais tags: </b>
 	  <p id="tags"> Lixo, Trânsito, Sujeira, Segurança, Transporte, Ponte, Roubos, Impostos </p>
 	</div>
 	<div id="tagcloud">
-	  <img src="/cloud.jpg" height="212px" width="284px" />
 	</div>
 	<div id="patrocinio">
-	  <img src="/banner.jpg" height="212px" width="284px" />
 	</div>
       </div>
       <div id="content">
 	<div id="mainform">
-	  <form method="post" action="index.erb">
-	      <h1 id="title"> Aqui em FLORIPA tem... </h1>
-	      <input id="input" type="text" name="input"/>
-	      <input class="submit" type="submit" name="submit" value="Enviar">
+	  <form method="post" action="/">
+	    <h1 id="title"> em FLORIPA tem... </h1>
+	    <textarea id="input" name="input">Type your message here </textarea>
+	    <input class="submit" type="submit" name="submit" value="Enviar" />
 	  </form>
 	  <div id="social">
 	    <form>
-	      <input type="checkbox"> Facebook </input>
-	      <input type="checkbox"> Twitter </input>
-	      <input type="checkbox"> Google + </input>
+	      <input type="checkbox" /> Facebook
+	      <input type="checkbox" /> Twitter 
+	      <input type="checkbox" /> Google + 
 	    </form>
 	  </div>
 	</div>
 	<div id="posts">
-	  <div class="recent"> <p> Em Floripa tem... </p> </div>
-	  <div class="recent"> <p> Em Floripa tem... </p> </div>
-	  <div class="recent"> <p> Em Floripa tem... </p> </div>
-	  <div class="recent"> <p> Em Floripa tem... </p> </div>
-	  <div class="recent"> <p> Em Floripa tem... </p> </div>
-	  <div class="recent"> <p> Em Floripa tem... </p> </div>	
+	  <% @posts.each do |post| %>
+	    <div class="recent"><p><%= post.message %></p><%= post.created_at.strftime('%H:%M - %d/%m/%Y') -%></div>
+	  <% end %>
 	  <div class="nav"> Anteriores | Próximos </div>
 	</div>
-      <div>
+      </div>
+    </div>
+    <div class="footer">
+      TESTE SITEMAP
     </div>
   </body>
 </html>

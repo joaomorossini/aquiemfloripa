@@ -46,8 +46,32 @@ table {
 
 /* CSS Reset */
 
+/* Clearfix */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+/* Clearfix */
+
 body {
-    font-family: lucida grande;
+    font-family: "lucida grande";
+    text-align: center;
 }
 
 .bar {
@@ -103,6 +127,7 @@ body {
     border-radius: 5px;
     font-size: 18px;
     text-align: left;
+    vertical-align: text-top;
 }
 
 .submit {
@@ -129,6 +154,7 @@ body {
     border-radius: 5px;
     margin-right: auto;
     margin-left: auto;
+    text-align: left;
 }
 
 p {
@@ -147,7 +173,7 @@ p {
     height: 100%;
 }
 
-#userinfo {
+#user {
     height: 250px;
     background: grey;
     border-radius: 5px;
@@ -156,12 +182,12 @@ p {
     font-size: 0.8em;
 }
 
-#userinfo h1 {
+#user h1 {
     font-size: 1.3em;
     font-weight: bold;
 }
 
-#userinfo p {
+#user p {
     padding: 0;
     margin: 0;
     padding-top: 4px;
@@ -208,7 +234,7 @@ p {
     margin-left: auto;
 }
 
-.bottommenu {
+.footer {
     height: 80px;
     background: black;
     margin-top: 10px;
