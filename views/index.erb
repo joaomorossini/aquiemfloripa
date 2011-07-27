@@ -6,20 +6,20 @@
     <title> Aqui em... </title>
   </head>
   <body>
-    <div class="bar"> 
+     <div class="topbarparent">
       <div class="topbar">
-	LOGO
-	<input id="search" type="text" name="search" />
-	<a href="login.erb">  login  </a>
-	<a href="about.erb">  about  </a>
+	<div id="links">
+	  <a href="/login"> login </a>
+	  <a href="/about"> about </a>
+	  <a href="/contact"> contact </a> 
+	</div>
       </div>
     </div>
-    
     <div class="main clearfix">
       <div class="sidebar">
 	<div id="user">
 	  <h1> João Guilherme S. Morossini </h1>
-	  <img src="/" alt="jongui" /> 
+	  <img src="/pic1.jpeg" alt="jongui" /> 
 	  <p>
 	    <b>Número de posts:</b> 52
 	  </p>
@@ -48,6 +48,10 @@
 	      <input type="checkbox" /> Google + 
 	    </form>
 	  </div>
+	</div>
+	<div class="tabs">
+	  <a> Recent </a>
+	  <a> Featured </a>
 	</div>
 	<div id="posts">
 	  <% @posts.each do |post| %>

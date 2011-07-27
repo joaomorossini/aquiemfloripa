@@ -2,6 +2,7 @@ require 'rubygems'
 require 'bundler'
 Bundler.setup
 require 'sinatra'
+require 'authlogic'
 require 'erubis'
 require 'active_record'
 
@@ -19,6 +20,18 @@ post '/' do
   #redirect to('/obrigado')
   # colocar flash message "obrigado por postar"
   redirect to('/')
+end
+
+get '/login' do
+  erb :login
+end
+
+post '/login' do
+  UserSession.create(:login => params[:login], :password => "params[:password]", :remember_me => false)
+end
+
+def current_user
+  UserSession.find
 end
 
 #get '/obrigado' do

@@ -46,7 +46,8 @@ table {
 
 /* CSS Reset */
 
-/* Clearfix */
+/* CLEARFIX -http://www.webtoolkit.info/css-clearfix.html */
+
 .clearfix:after {
 	content: ".";
 	display: block;
@@ -67,32 +68,54 @@ html[xmlns] .clearfix {
 * html .clearfix {
 	height: 1%;
 }
-/* Clearfix */
+
+/* CLEARFIX */
 
 body {
     font-family: "lucida grande";
     text-align: center;
 }
 
-.bar {
+.topbarparent {
+    background-color: black;
+    overflow: auto;
     height: 50px;
-    width: 100%;
-    background: black;
-    display: inline-block;
-    text-align: center;
 }
 
 .topbar {
     width: 981px;
     margin-right: auto;
     margin-left: auto;
-    display: inline;
-    color: white;
-    line-height: 50px;
 }
 
-.topbar a {
-    padding-left: 5px;
+#links {
+    margin-top: 15px;
+    float: right;
+}
+
+#links a {
+    padding-right: 8px;
+}
+
+.loginform {
+    width: 270px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: right;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+}
+
+.loginform form {
+    padding: 20px;
+}
+
+#logincontainer {
+    width: 400px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #search{
@@ -139,6 +162,18 @@ body {
     padding-bottom: 6px;
 }
 
+.tabs {
+    display: inline-block;
+    float: left;
+    margin-left: 1%;
+}
+
+.tabs a {
+    margin-right: 2px;
+    background-color: grey;
+    border-radius: 3px;
+}
+
 #posts {
     height: 100%;
     width: 100%;
@@ -180,6 +215,7 @@ p {
     margin-bottom: 10px;
     padding: 8px;
     font-size: 0.8em;
+    text-align: left;
 }
 
 #user h1 {
@@ -193,6 +229,11 @@ p {
     padding-top: 4px;
     padding-bottom: 4px;
     display: inline-block;
+}
+
+#user img {
+    height: 90px;
+    width: 65px;
 }
 
 .bold {
