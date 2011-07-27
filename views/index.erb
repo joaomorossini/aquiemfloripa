@@ -50,8 +50,10 @@
 	  </div>
 	</div>
 	<div class="tabs">
-	  <a> Recent </a>
-	  <a> Featured </a>
+	  <% selected = Hash.new('') -%>
+	  <% selected[params[:tab]] = 'active' -%>
+	  <a href="?tab=recent" class="<%= selected['recent'] -%>"> Recent </a>
+	  <a href="?tab=featured" class="<%= selected['featured'] -%>"> Featured </a>
 	</div>
 	<div id="posts">
 	  <% @posts.each do |post| %>

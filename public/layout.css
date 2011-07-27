@@ -169,9 +169,15 @@ body {
 }
 
 .tabs a {
+    color: black;
     margin-right: 2px;
     background-color: grey;
     border-radius: 3px;
+}
+
+.tabs a.active {
+    background-color: blue;
+    color: #FFF;
 }
 
 #posts {
