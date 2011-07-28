@@ -97,6 +97,15 @@ body {
     padding-right: 8px;
 }
 
+#links a:visited {
+    color: white;
+}
+
+#links a:hover {
+    color: #00FF00;
+    text-shadow: 0px 10px 9px grey;
+}
+
 .loginform {
     width: 270px;
     margin: auto;
@@ -118,8 +127,9 @@ body {
     margin-right: auto;
 }
 
-#search{
-    width: 220px;
+#input {
+    padding: 5px;
+    color: grey;
 }
 
 .main {
@@ -137,6 +147,7 @@ body {
 #mainform {
     padding-left: 5px;
     float: left;
+    margin-top: 0px;
 }
 
 #title {
@@ -218,7 +229,7 @@ p {
 }
 
 #user {
-    height: 250px;
+    height: 220px;
     background: grey;
     border-radius: 5px;
     margin-bottom: 10px;

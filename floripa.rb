@@ -30,6 +30,14 @@ post '/login' do
   UserSession.create(:login => params[:login], :password => "params[:password]", :remember_me => false)
 end
 
+get '/contact' do
+  erb :contact
+end
+
+get '/about' do
+  erb :about
+end
+
 def current_user
   UserSession.find
 end
