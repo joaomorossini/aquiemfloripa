@@ -9,13 +9,20 @@
      <div class="topbarparent">
       <div class="topbar">
 	<div id="links">
-	  <a href="/login"> login </a>
+	  <% unless current_user.nil? %>
+	    <a href="/login"> login </a>
+	  <% else %>
+	    <a href='/signup'> signup </a>
+	  <% end %>	  
 	  <a href="/about"> about </a>
 	  <a href="/contact"> contact </a> 
 	</div>
       </div>
     </div>
     <div class="main clearfix">
+    <div class='flashsuccess'>
+      <%= flash[:success] %>
+    </div>
       <div class="sidebar">
 	<div id="user">
 	  <h1> João Guilherme S. Morossini </h1>
@@ -50,6 +57,7 @@
 	</div>
 	<div class="tabs">
 	  <% selected = Hash.new('') -%>
+	  <% params[:tab] = 'recent' if params[:tab].nil? %>	  
 	  <% selected[params[:tab]] = 'active' -%>
 	  <a href="?tab=recent" class="<%= selected['recent'] -%>"> Recent </a>
 	  <a href="?tab=featured" class="<%= selected['featured'] -%>"> Featured </a>

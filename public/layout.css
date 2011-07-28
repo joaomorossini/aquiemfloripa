@@ -102,12 +102,20 @@ body {
 }
 
 #links a:hover {
-    color: #00FF00;
-    text-shadow: 0px 10px 9px grey;
+    color: #2062BC;
+    text-shadow: 0px 5px 9px grey;
+}
+
+.flashsuccess {
+    width: 981px;
+    padding: 10px;
+    font-size: 1.5em;
+    color: #2062BC;
+    text-align: center;
 }
 
 .loginform {
-    width: 270px;
+    width: 305px;
     margin: auto;
     margin-top: 50px;
     text-align: right;
@@ -182,6 +190,9 @@ body {
 .tabs a {
     color: grey;
     margin-right: 2px;
+    padding: 2px;
+    padding-bottom: 0px;
+    text-align: center;
 }
 
 .tabs a.active {
@@ -191,9 +202,13 @@ body {
     color: black;
     background: white;
     font-size: 1em;
+    position: relative;
+    top: 1px;
+    background: white;
 }
 
 #posts {
+    margin-top:1px;
     border-top: 1px solid black;
     height: 100%;
     width: 100%;
