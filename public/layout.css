@@ -169,21 +169,25 @@ body {
 }
 
 .tabs a {
-    color: black;
+    color: grey;
     margin-right: 2px;
-    background-color: grey;
-    border-radius: 3px;
 }
 
 .tabs a.active {
-    background-color: blue;
-    color: #FFF;
+    border: 1px solid black;
+    border-bottom: 0px;
+    font-weight: bold;
+    color: black;
+    background: white;
+    font-size: 1em;
 }
 
 #posts {
+    border-top: 1px solid black;
     height: 100%;
     width: 100%;
     float: left;
+    overflow: hidden;
 }
 
 .recent{
@@ -191,11 +195,10 @@ body {
     margin-left: 1%;
     height: 76px;
     margin-bottom: 5px;
-    background: #CCC;
-    border-radius: 5px;
     margin-right: auto;
     margin-left: auto;
     text-align: left;
+    border-bottom: 1px dashed black;
 }
 
 p {
