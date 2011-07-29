@@ -72,12 +72,13 @@ html[xmlns] .clearfix {
 /* CLEARFIX */
 
 body {
-    font-family: "lucida grande";
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
     text-align: center;
+    color: #484848;
 }
 
 .topbarparent {
-    background-color: black;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#111));
     overflow: auto;
     height: 50px;
 }
@@ -95,10 +96,12 @@ body {
 
 #links a {
     padding-right: 8px;
+    color: grey;
+    text-shadow: 0px 2px 9px black;    
 }
 
 #links a:visited {
-    color: white;
+    color: grey;
 }
 
 #links a:hover {
@@ -193,37 +196,51 @@ body {
     padding: 2px;
     padding-bottom: 0px;
     text-align: center;
+    border-radius: 2px;
 }
 
 .tabs a.active {
-    border: 1px solid black;
-    border-bottom: 0px;
     font-weight: bold;
-    color: black;
-    font-size: 1em;
+    color: #2062BC;
     position: relative;
-    top: 1px;
+    top: -1px;
+    border: 1px solid grey;
+    border-bottom: 1px solid white;
     background: white;
 }
 
 #posts {
-    margin-top:1px;
-    border-top: 1px solid black;
     height: 100%;
     width: 100%;
     float: left;
     overflow: hidden;
+    border-top: 1px solid grey;
 }
 
 .recent{
-    width: 98%;
-    margin-left: 1%;
     height: 76px;
+    margin-top: 5px;
     margin-bottom: 5px;
     margin-right: auto;
     margin-left: auto;
     text-align: left;
-    border-bottom: 1px dashed black;
+    background: #E0E0E0;    
+}
+
+.msg {
+    padding: 5px;
+    height: 55px;
+    color: #484848;
+}
+
+.timestamp {
+    font-size: 0.8em;
+    color: grey;
+    float: right;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    bottom: 5px;
 }
 
 p {
@@ -237,7 +254,6 @@ p {
 
 .sidebar {
     width: 29%;
-    height: 90%;
     background: #222328;
     color: #666;
     float: right;
@@ -251,7 +267,6 @@ p {
     width: 95%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px;
     padding: 8px;
     font-size: 0.8em;
     text-align: left;
@@ -259,7 +274,9 @@ p {
 
 #user h1 {
     font-size: 1.3em;
-    font-weight: bold;
+    color: #2062BC;
+    text-shadow: 0px 2px 9px black;  
+    text-align: center;
 }
 
 #user p {
@@ -275,21 +292,25 @@ p {
     width: 65px;
 }
 
-.bold {
-    font-weight: bold;
-    padding: 0;
-    margin: 0;
-    padding-left: 5px;
+.userinfo {
+    height: 90px;
+    width: 195px;
+    float: right;
+    text-align: left;
+}
+
+#usertags {
+    padding-top: 20px;
 }
 
 #tags {
     margin: 0;
     padding: 0;
-    padding-left: 5px;
+    text-align: center;
 }
 
 #tagcloud {
-    height: 200px;
+    height: 210px;
     margin-bottom: 10px;
     text-align: center;
     width: 95%;
@@ -299,7 +320,7 @@ p {
 }
 
 #patrocinio {
-    height: 200px;
+    height: 210px;
     width: 95%;
     margin-left: auto;
     margin-right: auto; 
@@ -319,8 +340,6 @@ p {
 }
 
 .footer {
-    height: 80px;
-    background: black;
     margin-top: 10px;
 }
 
@@ -330,5 +349,4 @@ h1 {
 
 a:link {
   text-decoration: none;
-  color: white;
 }

@@ -27,14 +27,16 @@
 	<div id="user">
 	  <h1> João Guilherme S. Morossini </h1>
 	  <img src="/pic1.jpeg" alt="jongui" /> 
-	  <p>
-	    <b>Número de posts:</b> 52
-	  </p>
-	  <p> 
-	    <b>Seguidores:</b>123
-	  </p>
-	  <b> Principais tags: </b>
-	  <p id="tags"> Lixo, Trânsito, Sujeira, Segurança, Transporte, Ponte, Roubos, Impostos </p>
+	  <div class='userinfo'>
+	    <p> Mensagens: 53 </p> <br>
+	    <p> Seguidores: 120 </p> <br>
+	    <p> Seguidos: 40 </p> <br>
+	    <p> Menções: 12 </p>
+	  </div>
+	  <div id='usertags'>
+	    <p> Principais tags: </p> <br>
+	    <p id="tags"> Lixo, Trânsito, Sujeira, Segurança, Transporte, Ponte, Roubos, Impostos, Política, Televisão </p>
+	  </div>
 	</div>
 	<div id="tagcloud">
 	</div>
@@ -64,14 +66,21 @@
 	</div>
 	<div id="posts">
 	  <% @posts.each do |post| %>
-	    <div class="recent"><p><%= post.message %></p><%= post.created_at.strftime('%H:%M - %d/%m/%Y') -%></div>
+	    <div class="recent">
+	      <div class='msg'>
+		<%= post.message %>
+	      </div>
+	      <div class='timestamp'>
+		Postado às
+		<%= post.created_at.strftime('%H:%M - %d/%m/%Y') %>
+	      </div>
+	    </div>
 	  <% end %>
 	  <div class="nav"> Anteriores | Próximos </div>
 	</div>
       </div>
     </div>
     <div class="footer">
-      TESTE SITEMAP
     </div>
   </body>
 </html>
