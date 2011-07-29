@@ -200,7 +200,6 @@ body {
     border-bottom: 0px;
     font-weight: bold;
     color: black;
-    background: white;
     font-size: 1em;
     position: relative;
     top: 1px;
@@ -238,15 +237,20 @@ p {
 
 .sidebar {
     width: 29%;
+    height: 90%;
+    background: #222328;
+    color: #666;
     float: right;
     margin-right: 0.8%;
     height: 100%;
+    border-radius: 5px;
 }
 
 #user {
     height: 220px;
-    background: grey;
-    border-radius: 5px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 10px;
     padding: 8px;
     font-size: 0.8em;
@@ -286,16 +290,20 @@ p {
 
 #tagcloud {
     height: 200px;
-    background: grey;
-    border-radius: 5px;
     margin-bottom: 10px;
     text-align: center;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;    
+    border-top: 1px solid grey;
 }
 
 #patrocinio {
     height: 200px;
-    background: grey;
-    border-radius: 5px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto; 
+    border-top: 1px solid grey;    
 }
 
 #patrocinio p {
