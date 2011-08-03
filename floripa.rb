@@ -30,7 +30,7 @@ get '/signup' do
 end
 
 post '/signup' do
-  @user = User.new(:username => params[:username], :password => params[:password], :email => params[:email], :password_confirmation => params[:password_confirmation])
+  @user = User.new(:name => params[:name], :username => params[:username], :password => params[:password], :email => params[:email], :password_confirmation => params[:password_confirmation])
 
   if @user.save
     flash[:success] = 'Seu cadastro foi realizado com sucesso!'
@@ -75,6 +75,9 @@ helpers do
   def current_user
     session = UserSession.find
     session.user if session
+  end
+  def capitalize_all string
+    string.split(' ').map {|t| t.capitalize}.join(' ') unless string.nil? || string.chomp == ''
   end
 end
 #O helper serve para poder chamar o método na View

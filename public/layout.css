@@ -119,7 +119,7 @@ body {
     margin-left: 8px;
     font-size: 1.5em;
     text-align: center;
-    border: 2px solid black;
+    border: 1px dotted grey;
 }
 
 .flashsuccess {
@@ -241,6 +241,7 @@ body {
     text-align: left;
     background: #E0E0E0;    
     padding: 5px;
+    border-radius: 2px;
 }
 
 .msg {
