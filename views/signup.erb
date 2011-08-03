@@ -8,6 +8,16 @@
   <body>
     <h1> Sign-Up Form </h1>
     <div id="logincontainer">
+      <div class='flasherror'>
+	<%= flash[:error] %>
+      </div>
+      <% if @user && @user.errors.count > 0 -%>
+	<div class="error">
+	  <% @user.errors.each do |field,msg| -%>
+	    <p><b><%= field.to_s -%></b>: <%= msg -%></p>
+	  <% end -%>
+	</div>
+      <% end -%>
       <div class="loginform">
 	<form name="signup" action="/signup" method="post">
 	  <div>
@@ -15,20 +25,21 @@
 	    <input id="username" type="text" name="username" />
 	  </div>
 	  <div>
+	    <label for="email">email</label>
+	    <input id="email" type="text" name="email" />
+	  </div>
+	  <div>
 	    <label for="password">password</label>
 	    <input id="password" type="password" name="password" />
 	  </div>
 	  <div>
 	    <label for="repeat_password">repeat password</label>
-	    <input id="repeatpassword" type="password" name="repeatpassword" />
+	    <input id="repeatpassword" type="password" name="password_confirmation" />
 	    </div>
 	  <div>
 	    <input type="submit" name="submit" value="Confirmar" />
 	  </div>
 	</form>
-      </div>
-      <div class='flasherror'>
-	<%= flash[:error] %>
       </div>
     </div>
   </body>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <link href='layout.css' rel='stylesheet' type='text/css'>
+    <title> Aqui tem... </title>
+  </head>
+  <body>
+     <div class="topbarparent">
+      <div class="topbar">
+	<div id="links">
+	  <% if current_user.nil? %>
+	    <a href='/signup'> signup </a>
+	    <a href='/login'> login </a>
+	  <% else %>
+	    <a href='/logout'> logout </a>
+	  <% end %>	  
+	  <a href="/about"> about </a>
+	  <a href="/contact"> contact </a> 
+	</div>
+      </div>
+    </div>
+    <div class="main clearfix">
+      <div class='flashsuccess'>
+	<%= flash[:success] %>
+      </div>
+      <%= yield %>
+    </div>
+    <div class="footer">
+    </div>
+  </body>
+</html>

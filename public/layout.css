@@ -151,8 +151,7 @@ body {
 }
 
 #content {
-    width: 70%;
-    height: 100%;
+    width: 686px;
 }
 
 #mainform {
@@ -180,8 +179,8 @@ body {
 
 #social{    
     float: left;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 3px;
+    padding-bottom: 15px;
 }
 
 .tabs {
@@ -193,9 +192,8 @@ body {
 .tabs a {
     color: grey;
     margin-right: 2px;
-    padding: 2px;
+    padding: 5px;
     padding-bottom: 0px;
-    text-align: center;
     border-radius: 2px;
 }
 
@@ -219,12 +217,13 @@ body {
 
 .recent{
     height: 76px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     margin-right: auto;
     margin-left: auto;
     text-align: left;
     background: #E0E0E0;    
+    padding: 5px;
 }
 
 .msg {
@@ -253,7 +252,7 @@ p {
 }
 
 .sidebar {
-    width: 29%;
+    width: 280px;
     background: #222328;
     color: #666;
     float: right;
@@ -263,7 +262,7 @@ p {
 }
 
 #user {
-    height: 220px;
+    height: 232px;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
@@ -310,7 +309,7 @@ p {
 }
 
 #tagcloud {
-    height: 210px;
+    height: 220px;
     margin-bottom: 10px;
     text-align: center;
     width: 95%;
@@ -320,7 +319,7 @@ p {
 }
 
 #patrocinio {
-    height: 210px;
+    height: 220px;
     width: 95%;
     margin-left: auto;
     margin-right: auto; 

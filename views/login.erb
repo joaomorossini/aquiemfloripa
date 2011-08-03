@@ -3,24 +3,31 @@
 <html>
   <head>
     <link href='layout.css' rel='stylesheet' type='text/css'>
-    <title> sign up</title>
+    <title>Login</title>
   </head>
   
   <body>
     <h1> Login Form </h1>    
+    <% if @session && @session.errors.count > 0 -%>
+      <div class="error">
+	<% @session.errors.each do |field, msg| -%>
+	  <p><%= field -%>: <%= msg -%></p>
+	<% end -%>
+      </div>
+    <% end -%>
     <div id="logincontainer">
       <div class="loginform">
-	<form name="login" action="/login">
+	<form name="login" action="/login" method='post'>
 	  <div>
 	    <label for="username">username</label>
-	    <input id="username" type="text" name="-email" />
+	    <input id="username" type="text" name="username" />
 	  </div>
 	  <div>
 	    <label for="password">password</label>
 	    <input id="password" type="password" name="password" />
 	  </div>
 	  <div>
-	    <input type="submit" name="submit" value="Confirmar" />
+	    <input type="submit" value="Confirmar" />
 	  </div>
 	</form>
       </div>

@@ -30,19 +30,15 @@ get '/signup' do
 end
 
 post '/signup' do
-  @user = User.new(:username => params[:username], :password => params[:password])
-  if params[:password] != params[:repeatpassword]
-    flash[:error] = 'Suas senhas não são iguais. Tente novamente'
-    redirect to '/signup'
-  else
+  @user = User.new(:username => params[:username], :password => params[:password], :email => params[:email], :password_confirmation => params[:password_confirmation])
 
-    if @user.save
-      flash[:success] = 'Seu cadastro foi realizado com sucesso!'
-    else
-      flash[:error] = 'Seu cadastro não foi salvo. Tente novamente'
-    end
+  if @user.save
+    flash[:success] = 'Seu cadastro foi realizado com sucesso!'
+    redirect to('/')
+  else
+    flash.now[:error] = 'Seu cadastro não foi salvo. Tente novamente'
+    erb :signup
   end
-  redirect to('/')
 end
 
 get '/login' do
@@ -50,15 +46,22 @@ get '/login' do
 end
 
 post '/login' do
-  UserSession.create(:login => params[:login], :password => "params[:password]", :remember_me => false)
+  @session = UserSession.new(:username => params[:username], :password => params[:password], :remember_me => false)
+
+  if @session.save
+    flash[:success] = "Bem-vindo, #{current_user.username}!"
+    redirect to('/')
+  else
+    flash.now[:error] = "Não foi possível fazer o seu login!"
+    erb :login
+  end
 end
 
-#get '/logout' do
-  #redirect to '/'
-  #flash[:notice] = 'Você não está mais logado'
-  #UserSession = nil
-#end
-
+get '/logout' do
+  flash[:notice] = 'Você não está mais logado'
+  UserSession.find.destroy
+  redirect to('/')
+end
 
 get '/contact' do
   erb :contact
