@@ -21,9 +21,25 @@
       </div>
     </div>
     <div class="main clearfix">
-      <div class='flashsuccess'>
-	<%= flash[:success] %>
-      </div>
+      <% unless flash[:success].nil? && flash[:error].nil? && flash[:notice].nil? %>
+	<div class='flash'>
+	  <% unless flash[:success].nil? %>
+	    <div class="flashsuccess">
+	      <%= flash[:success] %>
+	    </div>
+	  <% end %>
+	  <% unless flash[:error].nil? %>
+	    <div class="flashserror">
+	      <%= flash[:error] %>
+	    </div>
+	  <% end %>
+	  <% unless flash[:notice].nil? %>
+	    <div class="flashnotice">	
+	      <%= flash[:notice] %>
+	    </div>
+	  <% end %>
+	</div>
+      <% end %>
       <%= yield %>
     </div>
     <div class="footer">

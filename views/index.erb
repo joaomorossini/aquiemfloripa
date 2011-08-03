@@ -1,7 +1,7 @@
 <div class="sidebar">
   <div id="user">
-    <h1><%= current_user.username if current_user %></h1>
-    <img src="/pic1.jpeg" alt="jongui" /> 
+    <h1><%= current_user.username.capitalize if current_user %></h1>
+    <img src="/" alt="profile picture" /> 
     <div class='userinfo'>
       <p> Mensagens: 53 </p> <br>
       <p> Seguidores: 120 </p> <br>

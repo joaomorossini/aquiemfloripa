@@ -8,9 +8,6 @@
   <body>
     <h1> Sign-Up Form </h1>
     <div id="logincontainer">
-      <div class='flasherror'>
-	<%= flash[:error] %>
-      </div>
       <% if @user && @user.errors.count > 0 -%>
 	<div class="error">
 	  <% @user.errors.each do |field,msg| -%>
