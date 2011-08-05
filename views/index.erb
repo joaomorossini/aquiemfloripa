@@ -41,23 +41,27 @@
   </div>
   <div id="posts">
     <% @posts.each do |post| %>
-      <div class="recent">
-	<div class='msg'>
-	  <%= post.message %>
-	  <div class='wrapper'>
-	    <div class='like'>
-	      <%= post.likes %>	    
-	      <form method='post' action='/like'>
-		<input type='hidden' name='id' value='<%= post.id %>' />
-		<input type='submit' value='Like' />
+      <div class="message">
+	<%= post.message %>
+      </div>
+      <div class="msgdetails">
+	<table>
+	  <tr>
+	    <td>
+	      <%= post.likes %>
+	    </td>
+	    <td>
+	      <form method="post" action="/like">
+		<input type="hidden" name="id" value="<%= post.id %>" />
+		<input type="submit" value="Like" />
 	      </form>
-	    </div>
-	    <div class='timestamp'>
+	    </td>
+	    <td>
 	      Postado às
-	      <%= post.created_at.strftime('%H:%M - %d/%m/%Y') %>
-	    </div>
-	  </div>
-	</div>
+	      <%= post.created_at.strftime("%H:%M - %d/%m/%Y") %>
+	    </td>
+	  </tr>
+	</table>
       </div>
     <% end %>
     <div class="nav">

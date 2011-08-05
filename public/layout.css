@@ -233,34 +233,22 @@ body {
     border-top: 1px solid grey;
 }
 
-.recent{
+.message {
+    border-radius: 2px;
+    background: #E0E0E0;    
+    color: #484848;
     height: 76px;
     margin-top: 8px;
     margin-bottom: 8px;
     margin-right: auto;
     margin-left: auto;
+    padding: 5px;
     text-align: left;
-    background: #E0E0E0;    
-    padding: 5px;
-    border-radius: 2px;
 }
 
-.msg {
-    padding: 5px;
-    height: 55px;
-    color: #484848;
+.msgdetails {
+    font-size: 0.8em;
     display: inline;
-}
-
-.wrapper {
-    font-size: 0.8em;    
-    color: grey;
-}
-
-.timestamp {
-}
-
-.like {
 }
 
 p {
