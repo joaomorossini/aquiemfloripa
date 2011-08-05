@@ -20,7 +20,7 @@ get '/' do
 end
 
 post '/' do
-  Post.create(:message => params[:input])
+  Post.create(:message => params[:input], :user_id => current_user.id)
   flash[:success] = 'Sua mensagem foi postada com sucesso!'
   redirect to('/')
 end
@@ -73,7 +73,7 @@ end
 
 post '/like' do
   p = Post.find(params[:id])
-  p.increment(:likes, by = 1)
+  p.increment(:likes)
   if p.save
     flash[:success] = "Realizado com sucesso"
   else  

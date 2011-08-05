@@ -60,6 +60,11 @@
 	      Postado às
 	      <%= post.created_at.strftime("%H:%M - %d/%m/%Y") %>
 	    </td>
+	    <td>
+	      por
+	      <% u = User.find(post.user_id) if post.user_id %>
+	      <%= if u then u.name else "Usuário anônimo" end %>
+	    </td>
 	  </tr>
 	</table>
       </div>
