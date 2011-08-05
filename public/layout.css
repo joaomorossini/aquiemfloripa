@@ -78,9 +78,9 @@ body {
 }
 
 .topbarparent {
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#111));
     overflow: auto;
     height: 50px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#111));
 }
 
 .topbar {
@@ -211,6 +211,7 @@ body {
     margin-right: 2px;
     padding: 5px;
     padding-bottom: 0px;
+    padding-top: 2px;
     border-radius: 2px;
 }
 
@@ -248,16 +249,18 @@ body {
     padding: 5px;
     height: 55px;
     color: #484848;
+    display: inline;
+}
+
+.wrapper {
+    font-size: 0.8em;    
+    color: grey;
 }
 
 .timestamp {
-    font-size: 0.8em;
-    color: grey;
-    float: right;
-    padding: 0px;
-    margin: 0px;
-    position: relative;
-    bottom: 5px;
+}
+
+.like {
 }
 
 p {
@@ -364,6 +367,6 @@ h1 {
     padding: 10px;
 }
 
-a:link {
+a {
   text-decoration: none;
 }

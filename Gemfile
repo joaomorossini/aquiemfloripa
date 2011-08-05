@@ -8,6 +8,9 @@ gem 'activerecord', '~> 3.0.7'
 gem 'mysql2', '~> 0.2.7'
 gem 'authlogic', '~> 3.0.3'
 gem 'rack-flash', '~> 0.1.2'
+gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', 
+  :tag => 'v3.0.pre2', 
+  :require => 'will_paginate/finders/base'
 #gem 'sass', '~> 3.1.2'
 #gem 'haml', '~> 3.1.1'
 #gem "carrierwave", "~> 0.5.4"

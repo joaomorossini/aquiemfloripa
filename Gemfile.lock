@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/mislav/will_paginate.git
+  revision: 4d8d14c57cfd397362156abf6cefd1c0b71c8dba
+  tag: v3.0.pre2
+  specs:
+    will_paginate (3.0.pre2)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -47,3 +54,4 @@ DEPENDENCIES
   rake
   sinatra (~> 1.2.6)
   thin (~> 1.2.11)
+  will_paginate!

@@ -36,21 +36,32 @@
     <% selected = Hash.new('') -%>
     <% params[:tab] = 'recent' if params[:tab].nil? %>	  
     <% selected[params[:tab]] = 'active' -%>
-    <a href="?tab=recent" class="<%= selected['recent'] -%>"> Recent </a>
-    <a href="?tab=featured" class="<%= selected['featured'] -%>"> Featured </a>
+    <a href="?tab=recent" class="<%= selected['recent'] -%>">Recent</a>
+    <a href="?tab=featured" class="<%= selected['featured'] -%>">Featured</a>
   </div>
   <div id="posts">
     <% @posts.each do |post| %>
       <div class="recent">
 	<div class='msg'>
 	  <%= post.message %>
-	</div>
-	<div class='timestamp'>
-	  Postado às
-	  <%= post.created_at.strftime('%H:%M - %d/%m/%Y') %>
+	  <div class='wrapper'>
+	    <div class='like'>
+	      <%= post.likes %>	    
+	      <form method='post' action='/like'>
+		<input type='hidden' name='id' value='<%= post.id %>' />
+		<input type='submit' value='Like' />
+	      </form>
+	    </div>
+	    <div class='timestamp'>
+	      Postado às
+	      <%= post.created_at.strftime('%H:%M - %d/%m/%Y') %>
+	    </div>
+	  </div>
 	</div>
       </div>
     <% end %>
-    <div class="nav"> Anteriores | Próximos </div>
+    <div class="nav">
+      <%= paginate @posts %>
+    </div>
   </div>
 </div>

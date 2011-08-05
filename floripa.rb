@@ -1,6 +1,6 @@
 require 'rubygems'
-require 'bundler'
-Bundler.setup
+require 'bundler/setup'
+Bundler.require :default
 require 'sinatra'
 require 'authlogic'
 require 'erubis'
@@ -15,7 +15,7 @@ enable :sessions
 use Rack::Flash
   
 get '/' do
-  @posts = Post.limit(6).order('created_at desc')
+  @posts = Post.order('created_at desc').paginate(:page => params[:page], :per_page => 6)
   erb :index
 end
 
@@ -71,6 +71,17 @@ get '/about' do
   erb :about
 end
 
+post '/like' do
+  p = Post.find(params[:id])
+  p.increment(:likes, by = 1)
+  if p.save
+    flash[:success] = "Realizado com sucesso"
+  else  
+    flash[:error] = "Ação não executada. Tente novamente"
+  end
+  redirect to('/')
+end
+
 helpers do
   def current_user
     session = UserSession.find
@@ -79,5 +90,18 @@ helpers do
   def capitalize_all string
     string.split(' ').map {|t| t.capitalize}.join(' ') unless string.nil? || string.chomp == ''
   end
+  def paginate(resources)
+    if !resources.next_page.nil? and !resources.previous_page.nil?
+      html = "<a href='?page=#{params[:page].to_i-1}'> « Prev </a>"
+      html += "#{params[:page]} of #{resources.total_pages} "
+      html += "<a href='?page=#{params[:page].to_i+1}'> Next » </a>"
+    elsif !resources.next_page.nil? and resources.previous_page.nil?
+       html = "<a href='?page=#{params[:page].to_i+1}'> Next » </a>"
+    elsif resources.next_page.nil? and !resources.previous_page.nil?
+      html = "<a href='?page=#{params[:page].to_i-1}'> « Prev </a>" 
+      html += "#{params[:page]} of #{resources.total_pages}"
+    end
+    return html
+  end  
 end
 #O helper serve para poder chamar o método na View
