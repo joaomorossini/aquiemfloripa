@@ -1,7 +1,7 @@
 <div class="sidebar">
   <div id="user">
     <h1><%= capitalize_all(current_user.name) if current_user %></h1>
-    <img src="/" alt="profile picture" /> 
+    <img src="/pic1.jpeg" alt="profile picture" /> 
     <div class='userinfo'>
       <p> Mensagens: 53 </p> <br>
       <p> Seguidores: 120 </p> <br>
@@ -33,11 +33,11 @@
     </div>
   </div>
   <div class="tabs">
-    <% selected = Hash.new('') -%>
+    <% selected = Hash.new('') %>
     <% params[:tab] = 'recent' if params[:tab].nil? %>	  
-    <% selected[params[:tab]] = 'active' -%>
-    <a href="?tab=recent" class="<%= selected['recent'] -%>">Recent</a>
-    <a href="?tab=featured" class="<%= selected['featured'] -%>">Featured</a>
+    <% selected[params[:tab]] = 'active' %>
+    <a href="?tab=recent" class="<%= selected['recent'] %>">Recent</a>
+    <a href="?tab=featured" class="<%= selected['featured'] %>">Featured</a>
   </div>
   <div id="posts">
     <% @posts.each do |post| %>
@@ -45,28 +45,22 @@
 	<%= post.message %>
       </div>
       <div class="msgdetails">
-	<table>
-	  <tr>
-	    <td>
-	      <%= post.likes %>
-	    </td>
-	    <td>
-	      <form method="post" action="/like">
-		<input type="hidden" name="id" value="<%= post.id %>" />
-		<input type="submit" value="Like" />
-	      </form>
-	    </td>
-	    <td>
-	      Postado às
-	      <%= post.created_at.strftime("%H:%M - %d/%m/%Y") %>
-	    </td>
-	    <td>
-	      por
-	      <% u = User.find(post.user_id) if post.user_id %>
-	      <%= if u then u.name else "Usuário anônimo" end %>
-	    </td>
-	  </tr>
-	</table>
+	<div class="timestamp">
+	  Postado às
+	  <%= post.created_at.strftime("%H:%M - %d/%m/%Y") %>
+	</div>
+	<div id="postowner">
+	  por
+	  <% u = User.find(post.user_id) if post.user_id %>
+	  <%= if u then u.name else "Usuário anônimo" end %>
+	</div>
+	<div id="likes">
+	  <%= if post.likes then post.likes else "0" end %>
+	  <form method="post" action="/like">
+	    <input type="hidden" name="id" value="<%= post.id %>" />
+	    <input type="submit" value="Like" />
+	  </form>
+	</div>
       </div>
     <% end %>
     <div class="nav">
