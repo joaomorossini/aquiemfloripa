@@ -15,7 +15,7 @@ enable :sessions
 use Rack::Flash
   
 get '/' do
-  @posts = Post.order('created_at desc').paginate(:page => params[:page], :per_page => 6)
+  @posts = (if params[:tab].nil? || params[:tab] == 'recent' then Post.recent else Post.featured end).paginate(:page => params[:page], :per_page => 6)
   erb :index
 end
 
