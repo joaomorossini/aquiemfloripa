@@ -247,9 +247,31 @@ body {
 }
 
 .msgdetails {
-    font-size: 0.8em;
+    font-size: 0.75em;
+    text-align: right;
+    padding-right: 10px;
+    position: relative;
+    top: 30px;
+}
+
+#likes {
+    display: inline;
+    padding-right: 10px;
+}
+
+#likes input {
+    position: relative;
+    top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+
+
+#likes form {
     display: inline;
 }
+
 
 p {
     padding: 10px;
@@ -271,7 +293,7 @@ p {
 }
 
 #user {
-    height: 232px;
+    height: 233px;
     width: 95%;
     margin-left: auto;
     margin-right: auto;

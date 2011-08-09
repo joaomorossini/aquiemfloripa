@@ -43,23 +43,27 @@
     <% @posts.each do |post| %>
       <div class="message">
 	<%= post.message %>
-      </div>
-      <div class="msgdetails">
-	<div class="timestamp">
-	  Postado às
-	  <%= post.created_at.strftime("%H:%M - %d/%m/%Y") %>
-	</div>
-	<div id="postowner">
-	  por
-	  <% u = User.find(post.user_id) if post.user_id %>
-	  <%= if u then u.name else "Usuário anônimo" end %>
-	</div>
-	<div id="likes">
-	  <%= if post.likes then post.likes else "0" end %>
-	  <form method="post" action="/like">
-	    <input type="hidden" name="id" value="<%= post.id %>" />
-	    <input type="submit" value="Like" />
-	  </form>
+	<div class="msgdetails">
+	  <div id="likes">
+	    <%= if post.likes then post.likes else "0" end %>
+	    <form method="post" action="/like">
+	      <input type="hidden" name="id" value="<%= post.id %>" />
+	      <input type="image" src="thumbs_up.png" alt="Like" />
+	    </form>
+	    <form method="post" action="/dislike">
+	      <input type="hidden" name="id" value="<%= post.id %>" />
+	      <input type="image" src="thumbs_down.png" alt="Like" />
+	    </form>
+	    <%= if post.dislikes then post.dislikes else "0" end %>
+	  </div>
+	  <span>
+	    Postado às
+	    <%= post.created_at.strftime("%H:%M - %d/%m/%Y") %>
+	  </span>
+	  <span>
+	    por
+	    <%= post.user ? post.user.name : "Usuário Anônimo" %>
+	  </span>
 	</div>
       </div>
     <% end %>

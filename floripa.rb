@@ -20,7 +20,7 @@ get '/' do
 end
 
 post '/' do
-  Post.create(:message => params[:input], :user_id => current_user.id)
+  Post.create(:message => params[:input], :user_id => (current_user ? current_user.id : nil))
   flash[:success] = 'Sua mensagem foi postada com sucesso!'
   redirect to('/')
 end
@@ -82,6 +82,17 @@ post '/like' do
   redirect to('/')
 end
 
+post '/dislike' do
+  p = Post.find(params[:id])
+  p.increment(:dislikes)
+  if p.save
+    flash[:success] = "Realizado com sucesso"
+  else  
+    flash[:error] = "Ação não executada. Tente novamente"
+  end
+  redirect to('/')
+end
+
 helpers do
   def current_user
     session = UserSession.find
@@ -91,6 +102,7 @@ helpers do
     string.split(' ').map {|t| t.capitalize}.join(' ') unless string.nil? || string.chomp == ''
   end
   def paginate(resources)
+    params[:page] ||= 1
     if !resources.next_page.nil? and !resources.previous_page.nil?
       html = "<a href='?page=#{params[:page].to_i-1}'> « Prev </a>"
       html += "#{params[:page]} of #{resources.total_pages} "
