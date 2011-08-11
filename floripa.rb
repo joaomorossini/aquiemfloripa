@@ -15,6 +15,18 @@ enable :sessions
 use Rack::Flash
   
 get '/' do
+  
+# A condição abaixo define que quando params[tab] NÃO for nulo, o elemento ':page' da session é setado para 1
+# Explicação: Quando o usuário acessa outra página da mesma tab, 'params[:tab]' passa a ser nulo. 'params[:tab]' só existe quando o usuário clica em uma tab. Portanto, ao mudar de tab, 'params[:tab]' recebe o valor correspondente àquela tab, deixa de ser nulo, o que aciona a ação 'session[:oage] = '1'
+
+  if !params[:city].nil?
+    session[:city] = params[:city]
+  end
+
+  if !params[:tab].nil?
+    session[:page] = '1'
+  end
+  
   if params[:tab].nil? && session[:tab].nil?
     session[:tab] = 'recent'
   elsif !params[:tab].nil?
@@ -27,14 +39,14 @@ get '/' do
     session[:page] = params[:page]
   end
 
-  @posts = ((session[:tab] == 'recent') ? Post.recent : Post.featured).paginate(:page => session[:page], :per_page => 6)
+  @posts = ((session[:tab] == 'recent') ? Post.city("#{session[:city]}").recent : Post.city("#{session[:city]}").featured).paginate(:page => session[:page], :per_page => 6)
   erb :index
 end
 
 post '/' do
-  Post.create(:message => params[:input], :user_id => (current_user ? current_user.id : nil))
+  Post.create(:message => params[:input], :user_id => (current_user ? current_user.id : nil), :city => session[:city])
   flash[:success] = 'Sua mensagem foi postada com sucesso!'
-  redirect to('/')
+  redirect to('/')  
 end
 
 get '/signup' do

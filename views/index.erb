@@ -32,6 +32,21 @@
       </form>
     </div>
   </div>
+  <div class='citydropdown'>
+    <form>
+      <select name='city'>
+      <% selectedcity = Hash.new('') %>
+      <% selectedcity[session[:city]] = 'selected' %>
+	<option <%= selectedcity['Florianopolis'] %> value='Florianopolis'>
+	  Florianópolis
+	</option>
+	<option <%= selectedcity['Capinzal'] %> value='Capinzal'> 
+	  Capinzal
+	</option>
+      </select>
+      <input type='submit' value='submit' />
+    </form>
+  </div>
   <div class="tabs">
     <% selected = Hash.new('') %>
     <% selected[session[:tab]] = 'active' %>
@@ -44,7 +59,7 @@
 	<%= post.message %>
 	<div class="msgdetails">
 	  <div id="likes">
-	    <%= if post.likes then post.likes else "0" end %>
+	    <%= post.likes %>
 	    <form method="post" action="/like">
 	      <input type="hidden" name="id" value="<%= post.id %>" />
 	      <input type="image" src="thumbs_up.png" alt="Like" />
@@ -53,7 +68,7 @@
 	      <input type="hidden" name="id" value="<%= post.id %>" />
 	      <input type="image" src="thumbs_down.png" alt="Like" />
 	    </form>
-	    <%= if post.dislikes then post.dislikes else "0" end %>
+	    <%= post.dislikes %>
 	  </div>
 	  <span>
 	    Postado às
