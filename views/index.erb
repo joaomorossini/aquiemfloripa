@@ -34,8 +34,7 @@
   </div>
   <div class="tabs">
     <% selected = Hash.new('') %>
-    <% params[:tab] = 'recent' if params[:tab].nil? %>	  
-    <% selected[params[:tab]] = 'active' %>
+    <% selected[session[:tab]] = 'active' %>
     <a href="?tab=recent" class="<%= selected['recent'] %>">Recent</a>
     <a href="?tab=featured" class="<%= selected['featured'] %>">Featured</a>
   </div>

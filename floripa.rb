@@ -15,7 +15,19 @@ enable :sessions
 use Rack::Flash
   
 get '/' do
-  @posts = (if params[:tab].nil? || params[:tab] == 'recent' then Post.recent else Post.featured end).paginate(:page => params[:page], :per_page => 6)
+  if params[:tab].nil? && session[:tab].nil?
+    session[:tab] = 'recent'
+  elsif !params[:tab].nil?
+    session[:tab] = params[:tab]
+  end
+
+  if params[:page].nil? && session[:page].nil?
+    session[:page] = '1'
+  elsif !params[:page].nil?
+    session[:page] = params[:page]
+  end
+
+  @posts = ((session[:tab] == 'recent') ? Post.recent : Post.featured).paginate(:page => session[:page], :per_page => 6)
   erb :index
 end
 
@@ -102,18 +114,18 @@ helpers do
     string.split(' ').map {|t| t.capitalize}.join(' ') unless string.nil? || string.chomp == ''
   end
   def paginate(resources)
-    params[:page] ||= 1
+    session[:page] ||= 1 #Se params[:page] não possuir um valor, atribuir o valor '1'
     if !resources.next_page.nil? and !resources.previous_page.nil?
-      html = "<a href='?page=#{params[:page].to_i-1}'> « Prev </a>"
-      html += "#{params[:page]} of #{resources.total_pages} "
-      html += "<a href='?page=#{params[:page].to_i+1}'> Next » </a>"
+      html = "<a href='?page=#{session[:page].to_i-1}'> « Prev </a>"
+      html += "#{session[:page]} of #{resources.total_pages} "
+      html += "<a href='?page=#{session[:page].to_i+1}'> Next » </a>"
     elsif !resources.next_page.nil? and resources.previous_page.nil?
-       html = "<a href='?page=#{params[:page].to_i+1}'> Next » </a>"
+       html = "<a href='?page=#{session[:page].to_i+1}'> Next » </a>"
     elsif resources.next_page.nil? and !resources.previous_page.nil?
-      html = "<a href='?page=#{params[:page].to_i-1}'> « Prev </a>" 
-      html += "#{params[:page]} of #{resources.total_pages}"
+      html = "<a href='?page=#{session[:page].to_i-1}'> « Prev </a>" 
+      html += "#{session[:page]} of #{resources.total_pages}"
     end
     return html
   end  
 end
-#O helper serve para poder chamar o método na View
+# Os helpers servem para poder chamar o método na View
