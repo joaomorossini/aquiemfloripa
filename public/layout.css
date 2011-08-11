@@ -177,6 +177,10 @@ body {
     margin-top: 0px;
 }
 
+#mainform h1 {
+    text-align: left;
+}
+
 #title {
     text-align: left;
     font-size: 24px;
@@ -293,7 +297,7 @@ p {
 }
 
 #user {
-    height: 233px;
+    height: 244px;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
@@ -340,7 +344,7 @@ p {
 }
 
 #tagcloud {
-    height: 220px;
+    height: 245px;
     margin-bottom: 10px;
     text-align: center;
     width: 95%;
@@ -350,7 +354,7 @@ p {
 }
 
 #patrocinio {
-    height: 220px;
+    height: 245px;
     width: 95%;
     margin-left: auto;
     margin-right: auto; 
@@ -375,6 +379,7 @@ p {
 
 h1 {
     padding: 10px;
+    font-size: 1.2em;
 }
 
 a {
