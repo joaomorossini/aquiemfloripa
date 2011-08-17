@@ -52,7 +52,12 @@ post '/' do
 end
 
 get '/search' do
-  @posts = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 6)
+
+  if !params[:page].nil?
+    session[:page] = params[:page]
+  end
+
+  @posts = Post.search(params[:search]).paginate(:page => session[:page], :per_page => 6)
   erb :search
 end
 
