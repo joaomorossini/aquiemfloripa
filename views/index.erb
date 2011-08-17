@@ -20,7 +20,7 @@
 </div>
 <div id="content">
   <div id="mainform">
-    <h1> Aqui em <%= City.find(session[:city]).name %> tem... </h1>
+    <h1> Aqui em <%= City.find(session[:city]).name if session[:city] %> tem... </h1>
     <form method="post" action="/">
       <textarea id="input" name="input">Type your message here </textarea>
       <input class="submit" type="submit" name="submit" value="Enviar" />
