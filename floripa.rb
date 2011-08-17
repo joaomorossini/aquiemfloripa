@@ -51,6 +51,11 @@ post '/' do
   redirect to('/')  
 end
 
+get '/search' do
+  @posts = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 6)
+  erb :search
+end
+
 get '/signup' do
   erb :signup
 end

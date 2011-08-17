@@ -9,4 +9,6 @@ class Post < ActiveRecord::Base
   scope :featured, order('likes-dislikes desc').where('created_at > ?', Time.new - 7.days)
   scope :city, lambda{|t| where(:city_id => t)}
   
+  scope :search, lambda{|keyword| where('message LIKE ?', "%#{keyword}%")}
+
 end
