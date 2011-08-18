@@ -142,14 +142,14 @@ helpers do
   def paginate(resources)
     session[:page] ||= 1 #Se params[:page] não possuir um valor, atribuir o valor '1'
     if !resources.next_page.nil? and !resources.previous_page.nil?
-      html = "<a href='?page=#{session[:page].to_i-1}'> « Prev </a>"
-      html += "#{session[:page]} of #{resources.total_pages} "
-      html += "<a href='?page=#{session[:page].to_i+1}'> Next » </a>"
+      html = "<a href='?page=#{session[:page].to_i-1}'> << </a>"
+      html += " pág #{session[:page]} de #{resources.total_pages} "
+      html += "<a href='?page=#{session[:page].to_i+1}'> >> </a>"
     elsif !resources.next_page.nil? and resources.previous_page.nil?
-       html = "<a href='?page=#{session[:page].to_i+1}'> Next » </a>"
+       html = "<a href='?page=#{session[:page].to_i+1}'> >> </a>"
     elsif resources.next_page.nil? and !resources.previous_page.nil?
-      html = "<a href='?page=#{session[:page].to_i-1}'> « Prev </a>" 
-      html += "#{session[:page]} of #{resources.total_pages}"
+      html = "<a href='?page=#{session[:page].to_i-1}'> << </a>" 
+      html += " pág #{session[:page]} de #{resources.total_pages}"
     end
     return html
   end  
