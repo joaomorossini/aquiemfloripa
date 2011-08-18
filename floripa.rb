@@ -13,6 +13,10 @@ Dir["models/*.rb"].each { |f| require f }
 
 enable :sessions
 use Rack::Flash
+
+before do
+  @cities = City.all 
+end  
   
 get '/' do
   
@@ -38,8 +42,6 @@ get '/' do
   elsif !params[:page].nil?
     session[:page] = params[:page]
   end
-
-  @cities = City.all 
 
   @posts = ((session[:tab] == 'recent') ? Post.city("#{session[:city]}").recent : Post.city("#{session[:city]}").featured).paginate(:page => session[:page], :per_page => 6)
   erb :index

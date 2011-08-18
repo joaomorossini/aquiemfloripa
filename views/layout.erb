@@ -10,18 +10,34 @@
       <div class="topbar">
 	<div id="links">
 	  <% if current_user.nil? %>
-	    <a href='/signup'> signup </a>
+	    <a href='/signup'> cadastro </a>
 	    <a href='/login'> login </a>
 	  <% else %>
-	    <a href='/logout'> logout </a>
+	    <a href='/logout'> sair </a>
 	  <% end %>	  
-	  <a href="/about"> about </a>
-	  <a href="/contact"> contact </a> 
+	  <a href="/about"> sobre </a>
+	  <a href="/contact"> contato </a> 
 	</div>
-	<form action="/search">
-	  <input name="search" type="text" />
-	  <input type="submit" />
-	</form>	
+
+      <div class='citydropdown'>
+	<form>
+	  <select name='city'>
+	    <% selected_city = Hash.new('') %>
+	    <% selected_city[session[:city]] = 'selected' %>
+	    <% @cities.each do |t| %>
+	      <option <%= selected_city["#{t.id}"] %> value='<%= t.id %>'> <%= t.name %> </option>
+	    <% end %>
+	  </select>
+	  <input type='submit' value='OK' />
+	</form>
+      </div>
+
+	<div id="search">
+	  <form action="/search">
+	    <input id="searchbox" name="search" type="text" />
+	    <input type="submit" value="Buscar"/>
+	  </form>	
+	</div>
       </div>
     </div>
     <div class="main clearfix">

@@ -89,6 +89,25 @@ body {
     margin-left: auto;
 }
 
+.citydropdown {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#search {
+    display: inline-block;
+}
+
+#search input {
+    margin-top: 12px;
+}
+
+#searchbox {
+    width: 200px;
+    height: 18px;
+    border-radius: 2px;
+}
+
 #links {
     margin-top: 15px;
     float: right;
@@ -155,11 +174,6 @@ body {
     margin-right: auto;
 }
 
-#input {
-    padding: 5px;
-    color: grey;
-}
-
 .main {
     margin-right: auto;
     margin-left: auto;
@@ -188,11 +202,13 @@ body {
 
 #input {
     width: 600px;
-    height: 70px;
+    height: 40px;
     border-radius: 5px;
     font-size: 18px;
     text-align: left;
     vertical-align: text-top;
+    padding: 5px;
+    color: grey;
 }
 
 .submit {
@@ -284,6 +300,12 @@ p {
 .nav {
     text-align: right;
     padding: 15px;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.nav a:visited {
+    color: #484848;    
 }
 
 .sidebar {
@@ -297,7 +319,7 @@ p {
 }
 
 #user {
-    height: 244px;
+    height: 219px;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
@@ -344,7 +366,7 @@ p {
 }
 
 #tagcloud {
-    height: 245px;
+    height: 232px;
     margin-bottom: 10px;
     text-align: center;
     width: 95%;
@@ -354,7 +376,7 @@ p {
 }
 
 #patrocinio {
-    height: 245px;
+    height: 232px;
     width: 95%;
     margin-left: auto;
     margin-right: auto; 
