@@ -6,7 +6,7 @@
     <title> sign up</title>
   </head>
   <body>
-    <h1> Sign-Up Form </h1>
+    <h1> Cadastro </h1>
     <div id="logincontainer">
       <% if @user && @user.errors.count > 0 -%>
 	<div class="error">
@@ -18,11 +18,11 @@
       <div class="loginform">
 	<form name="signup" action="/signup" method="post">
 	  <div>
-	    <label for="name">name</label>
+	    <label for="name">nome</label>
 	    <input id="name" type="text" name="name" />
 	  </div>
 	  <div>
-	    <label for="username">username</label>
+	    <label for="username">usuário</label>
 	    <input id="username" type="text" name="username" />
 	  </div>
 	  <div>
@@ -30,11 +30,11 @@
 	    <input id="email" type="text" name="email" />
 	  </div>
 	  <div>
-	    <label for="password">password</label>
+	    <label for="password">senha</label>
 	    <input id="password" type="password" name="password" />
 	  </div>
 	  <div>
-	    <label for="repeat_password">repeat password</label>
+	    <label for="repeat_password">confirme senha</label>
 	    <input id="repeatpassword" type="password" name="password_confirmation" />
 	    </div>
 	  <div>

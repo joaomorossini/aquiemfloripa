@@ -7,7 +7,7 @@
   </head>
   
   <body>
-    <h1> Login Form </h1>    
+    <h1> Login </h1>    
     <% if @session && @session.errors.count > 0 -%>
       <div class="error">
 	<% @session.errors.each do |field, msg| -%>
@@ -19,11 +19,11 @@
       <div class="loginform">
 	<form name="login" action="/login" method='post'>
 	  <div>
-	    <label for="username">username</label>
+	    <label for="username">usuário</label>
 	    <input id="username" type="text" name="username" />
 	  </div>
 	  <div>
-	    <label for="password">password</label>
+	    <label for="password">senha</label>
 	    <input id="password" type="password" name="password" />
 	  </div>
 	  <div>
