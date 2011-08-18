@@ -3,7 +3,7 @@
 <html>
   <head>
     <link href='layout.css' rel='stylesheet' type='text/css'>
-    <title> Aqui tem... </title>
+    <title> AquiEm... </title>
   </head>
   <body>
      <div class="topbarparent">
@@ -19,25 +19,29 @@
 	  <a href="/contact"> contato </a> 
 	</div>
 
-      <div class='citydropdown'>
-	<form>
-	  <select name='city'>
-	    <% selected_city = Hash.new('') %>
-	    <% selected_city[session[:city]] = 'selected' %>
-	    <% @cities.each do |t| %>
-	      <option <%= selected_city["#{t.id}"] %> value='<%= t.id %>'> <%= t.name %> </option>
-	    <% end %>
-	  </select>
-	  <input type='submit' value='OK' />
-	</form>
-      </div>
+	<span id="logo">
+	  <a href="/"> AquiEm </a>
+	</span>
 
-	<div id="search">
+	<span class='citydropdown'>
+	  <form>
+	    <select name='city'>
+	      <% selected_city = Hash.new('') %>
+	      <% selected_city[session[:city]] = 'selected' %>
+	      <% @cities.each do |t| %>
+		<option <%= selected_city["#{t.id}"] %> value='<%= t.id %>'> <%= t.name %> </option>
+	      <% end %>
+	    </select>
+	    <input type='submit' value='OK' />
+	  </form>
+	</span>
+
+	<span id="search">
 	  <form action="/search">
 	    <input id="searchbox" name="search" type="text" />
 	    <input type="submit" value="Buscar"/>
 	  </form>	
-	</div>
+	</span>
       </div>
     </div>
     <div class="main clearfix">

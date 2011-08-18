@@ -28,7 +28,7 @@
 </div>
 <div id="content">
   <div id="mainform">
-    <h1> Aqui em <%= City.find(session[:city]).name if session[:city] %> tem... </h1>
+    <h1> aqui em <%= City.find(session[:city]).name if session[:city] %> tem... </h1>
     <form method="post" action="/">
       <textarea id="input" name="input">Type your message here </textarea>
       <input class="submit" type="submit" name="submit" value="Enviar" />
@@ -44,8 +44,8 @@
   <div class="tabs">
     <% selected = Hash.new('') %>
     <% selected[session[:tab]] = 'active' %>
-    <a href="?tab=recent" class="<%= selected['recent'] %>">Recent</a>
-    <a href="?tab=featured" class="<%= selected['featured'] %>">Featured</a>
+    <a href="?tab=recent" class="<%= selected['recent'] %>">Recentes</a>
+    <a href="?tab=featured" class="<%= selected['featured'] %>">Em Destaque</a>
   </div>
   <div id="posts">
     <% @posts.each do |post| %>
